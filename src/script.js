@@ -32,14 +32,13 @@ function createCard(title, imageUrl, briefDescr) {
   cardImg.classList.add("card-img");
   cardHeader.appendChild(cardImg);
 
-  // Step1: Create the cardBody div, add the class card-body and add it to the card
-  const cardBody = document.createElement("div");
+  // Create the cardBody div, add the class card-body and add it to the card
+  const cardBody = document.createElement("a");
   cardBody.classList.add("card-body");
+  cardBody.href = `city.html?${title}`;
   card.appendChild(cardBody);
 
-  // Step2: Create the cardTitle h2, add the class card-title,
-  // set the text inside the tag to the "title" parameter of this function
-  // and add it to the cardBody
+  // Create the cardTitle h2, add the class card-title,
   const cardTitle = document.createElement("h2");
   cardTitle.classList.add("card-title");
   cardTitle.innerHTML = title;
