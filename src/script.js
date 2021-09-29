@@ -4,23 +4,24 @@ const cityList = [
   {
     name: "Paris",
     briefDescr: "La ville lumière",
-    picture: "https://placekitten.com/200/287"
+    picture: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f"
   },
   {
     name: "Barcelona",
     briefDescr: "Discover Gaudi",
-    picture: "https://placekitten.com/200/139"
+    picture: "https://images.unsplash.com/photo-1561407531-2b7ccd6b66b2"
   },
   {
     name: "Berlin",
     briefDescr: "The best clubs",
-    picture: "https://placekitten.com/200/90"
+    picture: "https://images.unsplash.com/photo-1622182438074-b163bdf8f16c"
   },
 ];
 
 function createCard(title, imageUrl, briefDescr) {
-  const card = document.createElement("div");
+  const card = document.createElement("a");
   card.classList.add("card");
+  card.href = `city.html?${title}`;
   cards.appendChild(card);
 
   const cardHeader = document.createElement("div");
@@ -33,16 +34,15 @@ function createCard(title, imageUrl, briefDescr) {
   cardHeader.appendChild(cardImg);
 
   // Create the cardBody div, add the class card-body and add it to the card
-  const cardBody = document.createElement("a");
+  const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
-  cardBody.href = `city.html?${title}`;
   card.appendChild(cardBody);
 
   // Create the cardTitle h2, add the class card-title,
   const cardTitle = document.createElement("h2");
   cardTitle.classList.add("card-title");
   cardTitle.innerHTML = title;
-  cardBody.append(cardTitle);
+  cardImg.append(cardTitle);
 
   const cardBriefDescr = document.createElement("p");
   cardBriefDescr.classList.add("card-brief-descr");
